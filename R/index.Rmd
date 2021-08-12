@@ -1,0 +1,294 @@
+---
+title: "Análisis de datos transcriptómicos de célula única (scRNA-seq) con R y Bioconductor"
+author:
+  - name: Leonardo Collado-Torres
+    affiliation:
+    - Lieber Institute for Brain Development, Johns Hopkins Medical Campus
+site: bookdown::bookdown_site
+apple-touch-sin: "icon_192.png"
+apple-touch-icon-size: 192
+favicon: "icon_32.png"
+github-repo: "ComunidadBioInfo/cdsb2021_scRNAseq"
+documentclass: book
+output:
+  bookdown::gitbook
+---
+
+
+![](img/logo.png)
+
+# Información del taller {-}
+
+**9-13 de agosto de 2021**
+
+¡Bienvenidxs al taller _Análisis de datos transcriptómicos de célula única (scRNA-seq) con R y Bioconductor_!
+
+<p align="justify">
+
+En los últimos años, la generación y análisis de transcriptomas de célula única ha cobrado gran importancia para resolver preguntas biológicas. En este taller revisaremos los métodos más recientes para analizar datos de single cell RNA-seq (transcriptómica en células únicas), usando paquetes de R especializados que están disponibles libremente vía Bioconductor. Este taller estará basado en el libro Orchestrating Single Cell Analysis with Bioconductor que fue publicado en Nature Methods y es de los artículos con mayor publicidad en 2020 y 2021.
+
+
+Durante este taller aprenderás las herramientas estadísticas para analizar datos de transcriptómica en células únicas usando Bioconductor. Revisaremos qué es un análisis de datos de célula única, cuáles son las principales diferencias entre el análisis de transcriptomas de célula única y en bulk, cómo documentar tu análisis y algunas herramientas para interpretar tus resultados. 
+</p>
+
+
+## Formato del curso: en línea {-}
+
+<p align="justify">
+Este es un curso digital. Las sesiones y material del curso serán presentados en línea. Esta modalidad incluirá grabaciones de video o audio del material, intercambio de archivos y sesiones de discusión temáticos, ejercicios de auto-evaluación y acceso a los instructores para comentarios durante el curso.
+</p>
+
+
+## ¿Quién es nuestra audiencia? {-}
+
+<p align="justify">
+Este curso está dirigido a personas que desean aprender cómo analizar datos transcriptómicos de célula única usando paquetes de R/Bioconductor. Revisa los videos de [CDSB2020 en YouTube](https://www.youtube.com/playlist?list=PLwa0ZAE6DJg5h-7uTFZjgP7VZUEadZZfl) o la página web de [cdsb2020](https://comunidadbioinfo.github.io/cdsb2020/), que es similar al taller de este año.
+</p>
+
+
+## Formulario de registro  {-}
+
+http://congresos.nnb.unam.mx/EBM2021/
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Do you want to learn how to analyze <a href="https://twitter.com/hashtag/scRNAseq?src=hash&amp;ref_src=twsrc%5Etfw">#scRNAseq</a> with <a href="https://twitter.com/Bioconductor?ref_src=twsrc%5Etfw">@Bioconductor</a>?<br><br>Learn with <a href="https://twitter.com/lcolladotor?ref_src=twsrc%5Etfw">@lcolladotor</a><a href="https://twitter.com/yalbi_ibm?ref_src=twsrc%5Etfw">@yalbi_ibm</a> <a href="https://twitter.com/AnaBetty2304?ref_src=twsrc%5Etfw">@AnaBetty2304</a> <a href="https://twitter.com/argininaa?ref_src=twsrc%5Etfw">@argininaa</a> <a href="https://twitter.com/naielisha?ref_src=twsrc%5Etfw">@naielisha</a> <a href="https://twitter.com/lawrah20?ref_src=twsrc%5Etfw">@lawrah20</a> <a href="https://twitter.com/roramirezf94?ref_src=twsrc%5Etfw">@roramirezf94</a> <a href="https://twitter.com/jvelezmagic?ref_src=twsrc%5Etfw">@jvelezmagic</a> <a href="https://twitter.com/KevsGenomic?ref_src=twsrc%5Etfw">@KevsGenomic</a> <a href="https://twitter.com/mpadilla905?ref_src=twsrc%5Etfw">@mpadilla905</a><br><br>Material adapted from OSCA <a href="https://twitter.com/PeteHaitch?ref_src=twsrc%5Etfw">@PeteHaitch</a> et al<a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a><a href="https://t.co/MIfFmKt3Fq">https://t.co/MIfFmKt3Fq</a> <a href="https://t.co/nSPCmVEPAC">pic.twitter.com/nSPCmVEPAC</a></p>&mdash; ComunidadBioInfo (@CDSBMexico) <a href="https://twitter.com/CDSBMexico/status/1411093315186012164?ref_src=twsrc%5Etfw">July 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## Instructores {-}
+
+* [Leonardo Collado-Torres](https://twitter.com/lcolladotor)
+* [Yalbi Balderas](https://twitter.com/yalbi_ibm)
+
+https://comunidadbioinfo.github.io/es/#people
+
+## Ponentes e instructores invitados {-}
+
+* [Ana Beatriz Villaseñor Altamirano](https://twitter.com/AnaBetty2304)
+* [Citlali Gil Aguillon](https://twitter.com/argininaa)
+* [Elisa Márquez Zavala](https://twitter.com/naielisha)
+* [Laura Lucila Gómez Romero](https://twitter.com/lawrah20)
+* [Ricardo Ramirez Flores](https://twitter.com/roramirezf94)
+
+## Ayudantes {-}
+
+* [Jesús Vélez Santiago](https://twitter.com/jvelezmagic)
+* [Kevin Emmanuel Meza Landeros](https://twitter.com/KevsGenomic)
+* [Mónica Padilla Gálvez](https://twitter.com/mpadilla905)
+
+
+
+## Temario  {-}
+
+
+Día 1
+
+* Introducción a R y RStudio
+* Ejercicio usando `usethis`, `here` y `postcards`
+* Introducción a RNA-seq de célula única (scRNA-seq) con Bioconductor y al libro de OSCA
+
+Día 2
+
+* Estructura e importe de datos
+* _Comunidades RLadies_
+* Control de calidad
+
+Día 3
+
+* Normalización de datos
+* _Foto y actividades de la comunidad_
+* Selección de genes
+
+Día 4
+
+* Reducción de dimensiones
+* Clustering
+* Identificación de genes marcadores
+
+Día 5
+
+* Anotación de clusters de células
+* Análisis de expresión diferencial
+* Plática científica del ponente invitadx
+
+
+## Código de Conducta {-}
+
+Seguiremos el código de conducta de la CDSB México [comunidadbioinfo.github.io/es/codigo-de-conducta/](https://comunidadbioinfo.github.io/es/codigo-de-conducta/) además del código de conducta de Bioconductor [bioconductor.org/about/code-of-conduct/](http://bioconductor.org/about/code-of-conduct/). 
+
+
+## Pre-requisitos {-}
+
+De forma general, 
+
+-	Computadora con al menos 8Gb de memoria y permisos de administrador para instalar paqueterías de R.
+-	Tener instalado R y RStudio en su última versión.
+-	Conocimientos básicos de secuenciación de transcriptomas.
+-	Conocimientos básicos de RStudio (Creación de Rscripts, manejo de la consola de RStudio, manejo del espacio de visualización).
+-	Conocimiento intermedio de R (Manejo de variables, lectura de archivos, creación y manejo de data frames y listas, generación de gráficas básicas, conocimiento sobre cómo instalar paqueterías desde CRAN y Bioconductor).
+
+
+Más específicamente, computadora con al menos 8 GB de memoria RAM, aplicación Zoom https://zoom.us/download, R versión 4.1 instalada de CRAN https://cran.r-project.org/ (ver video de https://youtu.be/6knyHlUe1cM sobre como instalar R en macOS o winOS), RStudio versión 1.4 https://www.rstudio.com/products/rstudio/download/#download, y los siguientes paquetes de R y Bioconductor:
+
+```{r install, eval = FALSE}
+## Para instalar paquetes
+if (!requireNamespace("remotes", quietly = TRUE)) {
+    install.packages("remotes")
+}
+
+## Para instalar paquetes de Bioconductor
+remotes::install_cran("BiocManager")
+BiocManager::version()
+# El anterior comando debe mostrar que estás usando la versión 3.13
+
+## Instala los paquetes de R que necesitamos
+```
+
+```{r auto_deps, echo = FALSE}
+cat(paste0(
+    'BiocManager::install(c("',
+    paste(
+        sort(remotes::local_package_deps()),
+        collapse = '", "'
+    ),
+    '"))'
+))
+```
+
+
+## Horario {-}
+
+_Consulta el calendario de este curso en: <http://bit.ly/calendarcdsb2021>._
+
+| Horario  | Tema | Instructores |
+| ------------------ | ---------------------------------- | ----------------------------- | 
+| **Día 1: Agosto 9, 2021**  |     |      |      |
+| 08:00-09:00 | (opcional) Ayuda con instalación de paquetes de R | |
+| 09:00-09:30 | Inauguración EBM2021  | [Julio Collado Vides](https://www.ccg.unam.mx/pedro-julio-collado-vides/), [Christian Sohlenkamp](https://www.ccg.unam.mx/christian-sohlenkamp/), [Irma Martínez Flores](https://www.ccg.unam.mx/irma-martinez-flores/), [Shirley Alquicira Hernández](https://www.ccg.unam.mx/shirley-alquicira-hernandez/)  |
+| 09:30-10:00 | [Bienvenida a la CDSB y revisión del código de conducta](https://speakerdeck.com/lcolladotor/cdsb2021) | [Leonardo Collado-Torres](http://comunidadbioinfo.github.io/authors/lcollado/) |
+| 10:00-11:00 | Introducción a R y RStudio | [Leonardo Collado-Torres](http://comunidadbioinfo.github.io/authors/lcollado/) |
+| 11:00-11:30 | Descanso | |
+| 11:30-14:00 | Ejercicio usando `usethis`, `here` y `postcards` | [Citlali Gil Aguillon](https://twitter.com/argininaa) y [Elisa Márquez Zavala](https://twitter.com/naielisha) |
+| 14:00-15:30 | Descanso: comida | |
+| 15:30-17:00 | Introducción a RNA-seq de célula única (scRNA-seq) con Bioconductor y al libro de OSCA | [Citlali Gil Aguillon](https://twitter.com/argininaa) y [Elisa Márquez Zavala](https://twitter.com/naielisha) |
+| 17:00-18:00 | (Invitada) [Principios FAIR para software de investigación](https://twitter.com/orchid00/status/1424885782272122884?s=20) | [Paula Andrea](https://twitter.com/orchid00) |
+| **Día 2: Agosto 10, 2021** |      |      |
+| 08:00-09:00 | (opcional) Ayuda con instalación de paquetes de R | |
+| 09:00-11:00 | Estructura e importe de datos | [Citlali Gil Aguillon](https://twitter.com/argininaa) y [Elisa Márquez Zavala](https://twitter.com/naielisha) |
+| 11:00-11:30 | Descanso | |
+| 11:30-12:00 | Keynote: [La comunidad R-Ladies](https://rladiesqro.github.io/additional/2021TIB_Rladies/) | [Ana Beatriz Villaseñor Altamirano](https://twitter.com/AnaBetty2304) |
+| 12:00-14:00 | Control de calidad | [Leonardo Collado-Torres](http://comunidadbioinfo.github.io/authors/lcollado/)  |
+| 14:00-15:30 | Descanso: comida | |
+| 15:30-17:30 | Control de calidad | [Leonardo Collado-Torres](http://comunidadbioinfo.github.io/authors/lcollado/)  |
+| 17:30-18:00 | (opcional) Interactúa con lxs instructores y ayudantes | |
+| **Día 3: Agosto 11, 2021** |      |      |
+| 08:00-09:00 | (opcional) Ayuda con instalación de paquetes de R | |
+| 09:00-10:30 | Normalización de datos | [Ana Beatriz Villaseñor Altamirano](https://twitter.com/AnaBetty2304) |
+| 10:30-11:00 | Foto | |
+| 11:00-11:30 | Descanso | |
+| 11:30-12:30 | Selección de genes | [Yalbi Balderas](https://twitter.com/yalbi_ibm) |
+| 12:30-14:00 | Actividades para construir la comunidad | [Leonardo Collado-Torres](http://comunidadbioinfo.github.io/authors/lcollado/) |
+| 14:00-15:30 | Descanso: comida | |
+| 15:30-17:30 | Selección de genes | [Laura Lucila Gómez Romero](https://twitter.com/lawrah20) |
+| 17:30-18:00 | (opcional) Interactúa con lxs instructores y ayudantes | |
+| **Día 4: Agosto 12, 2021** |      |      |
+| 08:00-09:00 | (opcional) Ayuda con instalación de paquetes de R | |
+| 09:00-11:00 | Reducción de dimensiones | [Laura Lucila Gómez Romero](https://twitter.com/lawrah20) |
+| 11:00-11:30 | Descanso | |
+| 11:30-14:00 | Clustering | [Laura Lucila Gómez Romero](https://twitter.com/lawrah20) |
+| 14:00-15:30 | Descanso: comida | |
+| 15:30-17:30 | Identificación de genes marcadores | [Yalbi Balderas](https://twitter.com/yalbi_ibm) |
+| 17:30-18:30 | CDSB 2021: Evento social remoto | |
+| **Día 5: Agosto 13, 2021** |      |      |
+| 08:00-09:00 | (opcional) Ayuda con instalación de paquetes de R | |
+| 09:00-10:30 | Anotación de clusters de células | [Yalbi Balderas](https://twitter.com/yalbi_ibm) |
+| 10:30-11:00 | Evaluación del taller | [Irma Martínez Flores](https://www.ccg.unam.mx/irma-martinez-flores/) y [Shirley Alquicira Hernández](https://www.ccg.unam.mx/shirley-alquicira-hernandez/) |
+| 11:00-11:30 | Descanso | |
+| 11:30-12:30 | Análisis de expresión diferencial | [Leonardo Collado-Torres](http://comunidadbioinfo.github.io/authors/lcollado/) |
+| 12:30-14:00 | Introducción a `Seurat` | [Kevin Emmanuel Meza Landeros](https://twitter.com/KevsGenomic) |
+| 14:00-15:30 | Descanso: comida | |
+| 15:30-17:00 | Plática científica y sesión de preguntas | [Ricardo Ramirez Flores](https://twitter.com/roramirezf94) |
+| 17:00-17:30 | Clausura y recordatorio de la CDSB |      |
+| 17:30-18:00 | (opcional) Interactúa con lxs instructores y ayudantes | |
+
+## Música para ejercicios {-}
+
+Aquí están las listas de canciones por si desean escuchar algo de música mientras realizan ejercicios
+
+* [iTunes](https://music.apple.com/mx/playlist/cdsb2021/pl.u-d2b05dVTMjkvpg2?l=en)
+* [Spotify](https://open.spotify.com/playlist/0OuvqM69DKFK3QPbHIy2kc?si=373e4941aef0457d)
+
+## Materiales {-}
+
+Descarga los materiales con `usethis::use_course('comunidadbioinfo/cdsb2021_scRNAseq')` o revisalos en línea vía [**comunidadbioinfo.github.io/cdsb2021_scRNAseq**](http://comunidadbioinfo.github.io/cdsb2021_scRNAseq).
+
+### Durante el curso {-}
+
+Durante el curso estaremos actualizando el material, así que les recomendamos que usen RStudio para crear un nuevo proyecto que esté configurado con `git`/`GitHub`, para que con un simple `Pull` puedan actualizar los archivos del curso en su computadora. Para que funcione bien esto, les recomendamos que no editen los archivos que descarguen. Eso mejor háganlo en sus notas.
+
+Primero, en RStudio seleccionen `File` y luego `New Project ...`. Les saldrá la siguiente ventana donde tienen que escoger la opción de control de versiones.
+
+```{r echo=FALSE, fig.cap="Al crear un nuevo proyecto, seleccionen la opción de _Version Control_ (la tercera).", out.width="60%"}
+knitr::include_graphics("img/clone_version_control.png")
+```
+
+A continuación, seleccionen la opción de `Git`.
+
+```{r echo=FALSE, fig.cap="Selecciona la opción de `Git` (la primera).", out.width="60%"}
+knitr::include_graphics("img/clone_choose_git.png")
+```
+
+En la venta para especificar los detalles de `git`, 
+
+* Específica el siguiente URL del repositorio `https://github.com/ComunidadBioInfo/cdsb2021_scRNAseq.git`
+* El nombre del directorio se llenará de forma automática. No tienes que cambiarlo.
+* Especifíca el subdirectorio de donde quieres que guarde este proyecto. Te conviene ponerlo en tu Desktop o algún lugar que no sea adentro de otro proyecto de RStudio.
+* Selecciona la opción de _Open in new session_ para que te abra una nueva ventana de RStudio si así lo prefieres.
+
+
+```{r echo=FALSE, fig.cap="Especifica que el _Repository URL_ es `https://github.com/ComunidadBioInfo/cdsb2021_scRNAseq.git`.", out.width="60%"}
+knitr::include_graphics("img/clone_add_info.png")
+```
+
+## Fuentes {-}
+
+El material de este curso está basado en el:
+
+* libro [**Orchestrating Single Cell Analysis with Bioconductor**](https://osca.bioconductor.org/) de [Aaron Lun](https://www.linkedin.com/in/aaron-lun-869b5894/), [Robert Amezquita](https://robertamezquita.github.io/), [Stephanie Hicks](https://www.stephaniehicks.com/) y [Raphael Gottardo](http://rglab.org)
+* [**curso de scRNA-seq para WEHI**](https://drive.google.com/drive/folders/1cn5d-Ey7-kkMiex8-74qxvxtCQT6o72h) creado por [Peter Hickey](https://www.peterhickey.org/)
+* curso de [Leonardo Collado-Torres](https://twitter.com/lcolladotor) para LCG-UNAM-EJ de marzo 2020 https://github.com/lcolladotor/osca_LIIGH_UNAM_2020
+* taller de la CDSB 2020 https://github.com/ComunidadBioInfo/cdsb2020
+* curso de [Leonardo Collado-Torres](https://twitter.com/lcolladotor) para la LCG-UNAM de febrero 2021 https://github.com/lcolladotor/rnaseq_LCG-UNAM_2021
+
+
+## Zoom {-}
+
+Las ligas de Zoom están disponibles exclusivamente para lxs participantes de CDSB2021 vía Slack. Te enviaremos una invitación al correo electrónico que usaste para registrate.
+
+## Organizadores {-}
+
+* Comunidad de Desarrolladores de Software en Bioinformática [CDSB](https://twitter.com/CDSBMexico)
+* Red Mexicana de Bioinformática [RMB](https://twitter.com/RBioinformatica)
+* Nodo Nacional de Bioinformática en la UNAM [NNB-CCG](https://twitter.com/nnb_unam)
+
+## Patrocinadores {-}
+
+Agradecemos a nuestros patrocinadores:
+
+<a href="https://comunidadbioinfo.github.io/es/post/cs_and_s_event_fund_award/#.YJH-wbVKj8A"><img src="https://comunidadbioinfo.github.io/post/2021-01-27-cs_and_s_event_fund_award/spanish_cs_and_s_award.jpeg" width="400px" align="center"/></a>
+
+<a href="https://www.r-consortium.org/"><img src="https://www.r-consortium.org/wp-content/uploads/sites/13/2016/09/RConsortium_Horizontal_Pantone.png" width="400px" align="center"/></a>
+
+
+## Información sesión de R{-}
+
+Detalles de la sesión de R usada para crear este libro. El código fuente está disponible vía [`ComunidadBioInfo/cdsb2021_scRNAseq`](https://github.com/ComunidadBioInfo/cdsb2021_scRNAseq).
+
+```{r session_info}
+options(width = 120)
+pkgs <- installed.packages()[, "Package"]
+sessioninfo::session_info(pkgs, include_base = TRUE)
+```
+
+Fecha de la última actualización de esta página: `r Sys.time()`.
+
+## Licencia  {-}
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

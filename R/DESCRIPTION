@@ -1,0 +1,61 @@
+Package: cdsb2021scRNAseq
+Title: CDSB2021 scRNAseq
+Version: 0.99.0
+Authors@R:
+    c(
+    person("Leonardo", "Collado-Torres", role = c("aut", "cre"),
+    email = "lcolladotor@gmail.com", comment = c(ORCID = "0000-0003-2140-308X"))
+    )
+Description: CDSB2021 scRNA-seq analysis with Bioconductor workshop.
+License: Artistic-2.0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+URL: https://github.com/ComunidadBioInfo/cdsb2021_scRNAseq
+BugReports: https://github.com/ComunidadBioInfo/cdsb2021_scRNAseq/issues
+Imports:
+    batchelor,
+    BiocFileCache,
+    BiocSingular,
+    bluster,
+    celldex,
+    cowplot,
+    dplyr,
+    DropletUtils,
+    EnsDb.Hsapiens.v86,
+    ExperimentHub,
+    fossil,
+    gert,
+    gh,
+    here,
+    iSEE,
+    kableExtra,
+    lobstr,
+    org.Mm.eg.db,
+    patchwork,
+    PCAtools,
+    pheatmap,
+    plotly,
+    postcards,
+    pryr,
+    RColorBrewer,
+    Rtsne,
+    scater,
+    scPipe,
+    scran,
+    scRNAseq,
+    sessioninfo,
+    Seurat,
+    SingleCellExperiment,
+    SingleR,
+    suncalc,
+    TENxPBMCData,
+    usethis,
+    uwot
+Suggests:
+    BiocStyle,
+    biocthis,
+    bookdown,
+    styler
+VignetteBuilder: knitr
